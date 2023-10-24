@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Now</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <h1 id="title">Exchange Now</h1>
+    <h2 id="sub_title">CWNU Capstone 2023</h2>
+
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FblTdQu%2FbtsyPY1H8Bs%2FoRwfWp48oDWCSmsQAUTYBk%2Fimg.png"
+        width="300" height="300" alt="logo" id="logo-image">
+
+    <select id="currency-select">
+        <option value="">선택해주세요</option>
+        <option value="USD">미국 USD</option>
+        <option value="JPY">일본 JPY</option>
+        <option value="AUD">호주 AUD</option>
+    </select>
+
+    <button id="goToOtherPage">
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnUj83%2FbtsyULQvuzM%2FOKZE3HTlp6rdxbdMTZGn90%2Fimg.png"
+            width="25" height="25">
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 버튼 엘리먼트 가져오기
+            var button = document.getElementById('goToOtherPage');
+
+            // 버튼 클릭 이벤트 처리
+            button.addEventListener('click', function () {
+                // 새로운 페이지로 이동 (여기서는 'detect.html'로 이동)
+                window.location.href = 'detect.html';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

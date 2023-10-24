@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Roboflow Demo</title>
+
+    <meta name="viewport" content="width=640, user-scalable=no" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"
+        integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/async/3.2.0/async.min.js"
+        integrity="sha512-6K6+H87tLdCWvY5ml9ZQXLRlPlDEt8uXmtELhuJRgFyEDv6JvndWHg3jadJuBVGPEhhA2AAt+ROMC2V7EvTIWw=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script>
+
+    <link rel="stylesheet" href="./detect.css">
+    <script src="./main.js"></script>
+
+    <meta charset="UTF-8">
+
+    <div id="resultContainer">
+        <p id="result"></p>
+    </div>
+
+</head>
+
+<script>
+    // jpy 환율 정보
+    let jpy_price;
+    const jpy_url = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/jpy/krw.json";
+
+    fetch(jpy_url)
+        .then(response => response.json())
+        .then(data => {
+            jpy_price = parseInt(data.krw)
+            console.log(jpy_price);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+</script>
+
+<body class="loading">
+    <video id="video" autoplay muted playsinline></video>
+    <div id="fps"></div>
+
+
+</body>
+
+<style>
+    /* CSS 스타일링을 추가하여 버튼을 가운데 정렬합니다. */
+    .centered-button {
+        width: 140px;
+        height: 40px;
+        position: relative;
+        top: 780px;
+        left: 250px;
+    }
+
+    #resultContainer {
+        position: fixed;
+        bottom: 0;
+        height: 10%;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+    }
+</style>
+
+
+<body>
+    <button id="startDetection" class="centered-button">detection 테스트</button>
+    <script src="main.js"></script>
+</body>
+
+<body>
+    <div id="result">Most Frequent Class: </div>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
